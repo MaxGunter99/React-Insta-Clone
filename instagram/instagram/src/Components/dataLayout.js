@@ -7,7 +7,8 @@ function PostContainer(props) {
             {props.dummyData.map(dummyData => (
                 <div key={dummyData.id} className="posts">
                     <img src={dummyData.thumbnailUrl} alt={dummyData.username} />
-                    <h3>{dummyData.username}</h3>
+                    <p>{dummyData.username}</p>
+                    <img src={dummyData.imageUrl} alt={dummyData.username} />
                 </div>
             ))}
         </>

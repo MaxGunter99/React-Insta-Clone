@@ -20,3 +20,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.App .posts img{
+  border-radius: 100%;
+}
