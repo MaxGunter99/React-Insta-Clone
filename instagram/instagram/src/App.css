@@ -2,11 +2,9 @@
   text-align: center;
 }
 
-/* .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-} */
+html{
+  margin: 0 auto;
+}
 
 .App-link {
   color: #61dafb;
@@ -21,8 +19,71 @@
   }
 }
 
+.top{
+  display: flex;
+  padding: 10px;
+  border: 1px solid lightgray;
+  width: 59.8%;
+  margin: 0 auto;
+  align-items: center;
+}
 
+.top p{
+  margin-left: 10px;
+}
 
-.App .posts img{
+img.profile{
   border-radius: 100%;
+  height: 40px;
+  animation: App-logo-spin infinite 5s linear;
+  pointer-events: none;
+}
+
+img.picture{
+  border-radius: 0%;
+  width: 62%;
+}
+.instagram{
+  border: 1px solid lightgrey;
+  width: 100%;
+  margin-left: 0;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.likes{
+  display: flex;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-bottom: 0;
+  width: 59.8%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.comments {
+  padding: 10px;
+  width: 59.8%;
+  margin: 0 auto;
+  border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: column;
+}
+
+.comments p{
+  text-align: start;
+  font-size: 15px;
+}
+
+.timestamp{
+  color: grey;
+  font-size: 15px;
+}
+
+.posts{
+  max-width: 70%;
+  margin: 0 auto;
 }
