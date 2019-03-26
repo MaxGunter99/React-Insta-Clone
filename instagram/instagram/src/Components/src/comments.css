@@ -1,0 +1,15 @@
+
+form input{
+    width: 82%;
+    border-radius: 10px;
+}
+
+form button{
+    border-radius: 10px;
+}
+
+div.comments div div div{
+    display: flex;
+    margin-left: 10px;
+    padding-bottom: 10px;
+}

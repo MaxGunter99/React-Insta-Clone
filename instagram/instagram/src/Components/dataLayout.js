@@ -8,9 +8,11 @@ import profile from './src/profile.png';
 import comment from './src/comment.png';
 import bookmark from './src/bookmark.png';
 import share from './src/share.png';
-
+import App from './commentapp';
+import '/Users/voidchaser/Lambda/React-Insta-Clone/instagram/instagram/src/Components/src/comments.css';
 
 function PostContainer(props) {
+
     return (
         <>
             <div className='instagram'>
@@ -57,9 +59,10 @@ function PostContainer(props) {
                     {/* comments */}
                     <div className='comments'>
                         {dummyData.comments &&
-                            dummyData.comments.map(e => <p  key={e.id}> <strong>{e.username}</strong> {e.text}</p>)}
-                            <p className='timestamp'>{dummyData.timestamp}</p>
-                            <input></input>
+                            dummyData.comments.map(e => <p  key={e.id}> <strong>{e.username}</strong> {e.text}</p>)
+                        }
+                        <App />
+                        <p className='timestamp'>{dummyData.timestamp}</p>
                     </div>
                 </div>
             ))}
