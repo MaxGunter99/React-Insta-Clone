@@ -4,6 +4,7 @@
 
 html{
   margin: 0 auto;
+  background-color: rgb(245, 245, 245);
 }
 
 .App-link {
@@ -26,12 +27,22 @@ html{
   width: 59.8%;
   margin: 0 auto;
   align-items: center;
+  background-color: white;
+}
+
+.top {
+  display: inline-flex;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+.top div{
+  display: inline-flex;
 }
 
 .top p{
   margin-left: 10px;
 }
-
 img.profile{
   border-radius: 100%;
   height: 40px;
@@ -43,12 +54,28 @@ img.picture{
   border-radius: 0%;
   width: 62%;
 }
+
 .instagram{
   border: 1px solid lightgrey;
   width: 100%;
   margin-left: 0;
   font-size: 20px;
   margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  left: 0px;
+  background-color: white;
+  z-index: 500;
+  top: 0;
+}
+
+input{
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  height: 20px;
 }
 
 .likes{
@@ -59,6 +86,8 @@ img.picture{
   width: 59.8%;
   margin: 0 auto;
   align-items: center;
+  background-color: white;
+  border-top: 0px;
 }
 
 .comments {
@@ -71,11 +100,13 @@ img.picture{
   margin-bottom: 20px;
   display: flex;
   flex-flow: column;
+  background-color: white;
 }
 
 .comments p{
   text-align: start;
   font-size: 15px;
+  margin: 10px;
 }
 
 .timestamp{
@@ -86,4 +117,42 @@ img.picture{
 .posts{
   max-width: 70%;
   margin: 0 auto;
+}
+
+div.instagram img{
+  height: 40px;
+  padding: 10px 0;
+}
+
+.even{
+  margin: 65px;
+}
+
+.posts img.heart{
+  height: 25px;
+  padding-bottom: 7px;
+}
+
+.posts img.comment{
+  height: 42px;
+}
+
+.posts img.share{
+  height: 39px;
+  padding-left: 5px;
+}
+
+.top h3{
+  margin-left: 90%;
+}
+
+
+.likes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+img.bookmark{
+  height: 25px;
 }
