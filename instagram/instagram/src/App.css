@@ -7,10 +7,9 @@ html{
   background-color: rgb(245, 245, 245);
 }
 
-.App-link {
-  color: #61dafb;
-}
 
+
+/* animation: App-logo-spin infinite 5s linear; */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -21,19 +20,14 @@ html{
 }
 
 .top{
-  display: flex;
   padding: 10px;
   border: 1px solid lightgray;
   width: 59.8%;
   margin: 0 auto;
   align-items: center;
   background-color: white;
-}
-
-.top {
   display: inline-flex;
   justify-content: space-between;
-  margin: 0px;
 }
 
 .top div{
@@ -43,10 +37,10 @@ html{
 .top p{
   margin-left: 10px;
 }
+
 img.profile{
   border-radius: 100%;
   height: 40px;
-  animation: App-logo-spin infinite 5s linear;
   pointer-events: none;
 }
 
@@ -159,6 +153,7 @@ div.posts div.likes div div p{
   margin: 0px;
   height: 30px;
   margin-top: 20px;
+  width: 80px;
 }
 
 .posts img.comment{
@@ -184,4 +179,8 @@ div.posts div.likes div div p{
 img.bookmark{
   height: 25px;
   margin-top: -25px;
+}
+
+div.App button{
+  margin-top: 76px;
 }

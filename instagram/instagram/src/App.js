@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
 import Info from './Components/dummy-data';
 import PostContainer from './dataLayout';
 import dummyData from './Components/dummy-data';
-
+import ConditionalRender from './Auth/Authenication';
+import Log from './test';
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      dummyData: []
+      dummyData: [],
     };
   }
 
   componentDidMount() {
     this.setState({
-      dummyData: Info
+      dummyData: Info,
     });
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <PostContainer dummyData={this.state.dummyData} />
+        <Log />
       </div>
     );
   }
