@@ -1,15 +1,24 @@
 
 form input{
     width: 82%;
+    height: 25px;
     border-radius: 10px;
+    margin: 10px;
 }
 
 form button{
     border-radius: 10px;
+    height: 25px;
 }
 
 div.comments div div div{
     display: flex;
     margin-left: 10px;
     padding-bottom: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+div.comments div div div strong{
+    margin-right: 5px;
 }

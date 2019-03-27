@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import logo from './src/InstagramLogo.png';
 import instagram from './src/InstagramText.png';
-import compass from './src/compass.png';
 import heart from './src/heart.png';
+import compass from './src/compass.png';
 import profile from './src/profile.png';
 import comment from './src/comment.png';
 import bookmark from './src/bookmark.png';
 import share from './src/share.png';
-import App from './commentapp';
-import '/Users/voidchaser/Lambda/React-Insta-Clone/instagram/instagram/src/Components/src/comments.css';
+import Commenting from './Components/Comments/commentapp';
+import dummyData from './Components/dummy-data';
+import App from './likesapp';
+import '/Users/voidchaser/Lambda/React-Insta-Clone/instagram/instagram/src/comments.css';
 
 function PostContainer(props) {
 
@@ -46,22 +48,25 @@ function PostContainer(props) {
                     {/* likes */}
                     <div class='likes'>
                         <div>
-                            <img className='heart'src={heart} />
-                            <img className='comment'src={comment} />
-                            <img className='share'src={share} />
+                            <div className='likeNumber'>
+                                <App />
+                            </div>
+                            <div className='uneventful'>
+                                <img className='comment'src={comment} />
+                                <img className='share'src={share} />
+                            </div>
                         </div>
                         <div className='book'>
                             <img className='bookmark'src={bookmark} />
                         </div>
                     </div>
-                    <p className='likes'><strong>{dummyData.likes} Likes</strong></p>
 
                     {/* comments */}
                     <div className='comments'>
                         {dummyData.comments &&
                             dummyData.comments.map(e => <p  key={e.id}> <strong>{e.username}</strong> {e.text}</p>)
                         }
-                        <App />
+                        <Commenting />
                         <p className='timestamp'>{dummyData.timestamp}</p>
                     </div>
                 </div>

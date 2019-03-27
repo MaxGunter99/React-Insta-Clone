@@ -1,19 +1,19 @@
 import React from 'react';
 
-const TodoForm = props => {
+const CommentForm = props => {
   return (
     <form>        
       <input
-        onChange={props.handleTodoChange}
+        onChange={props.handleCommentChange}
         type='text'
-        name='todo'
+        name='comment'
         value={props.value}
         placeholder='Comment'
                 
       />
-      <button onClick={props.handleAddTodo}>Post</button>        
+      <button onClick={props.handleAddComment}>Post</button>        
     </form>
   );
 };
 
-export default TodoForm;
+export default CommentForm;
