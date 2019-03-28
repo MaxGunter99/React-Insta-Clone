@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const FirstComponent = props => {
-  return <h1>Hi! Im the first component</h1>;
-};
+import Auth from './Authenication';
+import Log from '../LogIn';
+import PostContainer from '../dataLayout';
 
-export default FirstComponent;
+class App3 extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
 
-// localStorage.setItem('itemName', value)
-// localStorage.getItem('itemName');
-// localStorage.removeItem('itemName');
-// localStorage.clear();
+  render() {
+    return (
+      <div>
+        <ConditionalView />
+      </div>
+    );
+  }
+}
+
+const ConditionalView = Auth(PostContainer)(Log);
+// export default App3;

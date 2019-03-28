@@ -1,34 +1,11 @@
-.App {
-  text-align: center;
-}
+
 
 html{
   margin: 0 auto;
   background-color: rgb(245, 245, 245);
+  text-align: center;
 }
 
-
-
-/* animation: App-logo-spin infinite 5s linear; */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.top{
-  padding: 10px;
-  border: 1px solid lightgray;
-  width: 59.8%;
-  margin: 0 auto;
-  align-items: center;
-  background-color: white;
-  display: inline-flex;
-  justify-content: space-between;
-}
 
 .top div{
   display: inline-flex;
@@ -49,21 +26,6 @@ img.picture{
   width: 62%;
 }
 
-.instagram{
-  border: 1px solid lightgrey;
-  width: 100%;
-  margin-left: 0;
-  font-size: 20px;
-  margin-bottom: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-around;
-  position: fixed;
-  left: 0px;
-  background-color: white;
-  z-index: 500;
-  top: 0;
-}
 
 input{
   height: 100%;
@@ -77,36 +39,19 @@ input{
   padding: 10px;
   border: 1px solid lightgray;
   border-bottom: 0;
-  width: 59.8%;
+  width: 605px;
   margin: 0 auto;
   align-items: center;
   background-color: white;
   border-top: 0px;
 }
 
-.comments {
-  padding: 10px;
-  width: 59.8%;
-  margin: 0 auto;
-  border-left: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-  margin-bottom: 20px;
-  display: flex;
-  flex-flow: column;
-  background-color: white;
-  padding-top: 0px;
-}
+
 
 .comments p{
   text-align: start;
   font-size: 15px;
   margin: 10px;
-}
-
-.timestamp{
-  color: grey;
-  font-size: 15px;
 }
 
 .posts{
@@ -120,7 +65,7 @@ div.instagram img{
 }
 
 .even{
-  margin: 25px;
+  margin: 66px;
 }
 
 .posts img.heart{
@@ -151,7 +96,6 @@ div.posts div.likes div .likeNumber div{
 
 div.posts div.likes div div p{
   height: 30px;
-  margin-top: 30px;
   width: 80px;
 }
 
@@ -180,10 +124,11 @@ img.bookmark{
   margin-top: -25px;
 }
 
-div.App button.lookAtMe{
-  margin-top: 71px;
-}
-
 p{
   font-weight: 100;
+}
+
+.loginPage image{
+  height: auto;
+  width: 100%;
 }

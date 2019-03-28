@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Info from './Components/dummy-data';
 import PostContainer from './dataLayout';
 import dummyData from './Components/dummy-data';
-import ConditionalRender from './Auth/Authenication';
-import Log from './test';
+import Log from './LogIn';
 
 class App extends Component {
 
