@@ -1,15 +1,19 @@
 import React from 'react';
-import CommentList from './commentList';
-import CommentForm from './commentForm';
+import CommentList from './CommentList';
+import CommentForm from './CommentForm';
+import dummyData from '../../dummy-data';
+
 
 class Commenting extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       comments: [],
       comment: ''
     };
 }
+
+
 
 addComment = event => {
   event.preventDefault();
@@ -34,6 +38,7 @@ toggleTodoComplete = id => {
 };
 
 render() {
+    console.log(this.props.dummyData.username);
     return (
       <div>
         <CommentList
@@ -44,6 +49,8 @@ render() {
           value={this.state.comment}         
           handleCommentChange={this.changeComment}
           handleAddComment={this.addComment}
+          comment={this.props.comment}
+          username={this.props.dummyData.username}
         />
       </div>
     );

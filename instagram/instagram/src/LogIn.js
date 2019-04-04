@@ -1,101 +1,166 @@
 import React, { Component } from 'react';
-import dummyData from './Components/dummy-data';
-import PostContainer from './dataLayout';
-import instagram from './src/InstagramText.png';
-import Info from './Components/dummy-data';
-import '/Users/voidchaser/Lambda/React-Insta-Clone/instagram/instagram/src/index.css';
-import '/Users/voidchaser/Lambda/React-Insta-Clone/instagram/instagram/src/comments.css';
+import dummyData from './dummy-data';
+import instagram from './Components/Images/InstagramText.png';
+import PostContainer from './Components/PostContainer/Posts';
 import styled, { css } from 'styled-components'
 
+
 class Log extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dummyData: [],
-      show: false,
-      username: '',
-      password: ''
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            dummyData: [],
+            show: false,
+            username: '',
+            password: ''
+        };
+    }
 
-  componentDidMount() {
-    this.setState({
-      dummyData: Info,
-    });
-  }
+    componentDidMount() {
+        this.setState({
+            dummyData: dummyData,
+        });
+    }
 
-  ToggleClick = () => {
-    this.setState({ show: !this.state.show });
-  }
+    ToggleClick = e => {
+        this.setState({ show: !this.state.show });
+        this.setState({ username: "" });
+        this.setState({ password: "" });
+    }
 
-  LoggingIn = () => {
-    this.setState({ show: !this.state.show });
-  }
+    handleInputChange = e => {
+        this.setState({ [e.target.name]: e.target.value})
+    }
 
-  handleInputChange = e => {
-    this.setState({ [e.targetname]: e.target.value})
-  }
-
-  
-  handleLoginSubmit = e => {
+    handleLoginSubmit = e => {
     const user = this.state.username;
-    localStorage.setItem('user', user);
-    window.location.reload();
-  }
+        localStorage.setItem('user', user);
+        window.location.reload();
+    }
 
-  render() {
-    
-    return (
+    componentDidMount() {
+        this.setState({
+          dummyData: dummyData,
+        });
+        console.log("mounting data");
+    }
       
-      <div className='App'>
-        { this.state.show ? <p>{ <PostContainer dummyData={this.state.dummyData} /> }</p> : 
-        <div className='loginPage'>
-          <img src={instagram} />
-          <H2>Username</H2>
-          <form>
-            <input
-              type='text'
-              name='username'
-              value={this.state.username}
-              onChange={this.handleInputChange}
-              placeholder='Username'
-            />
-          </form> 
-          <H2>Password</H2>
-          <form>
-            <input
-              type='text'
-              name='password'
-              value={this.state.password}
-              onChange={this.handleInputChange}
-              placeholder='Password'
-            />
-          </form> 
-        </div>}
-        <Button primary onClick={this.ToggleClick}>{ this.state.show ? 'Log Out' : 'Log In' }</Button> 
-      </div>
-    );
-  }
+    
+    addLikes= (username) => {
+        this.setState({
+            dummyData: this.state.dummyData.map(post => {
+                if (post.username === username ) {
+                    const newPost = {...post}
+                    newPost.likes += 1
+                    return newPost
+                }
+                return post
+            })
+        });
+    } 
+    
+    comment= (username, newComment, e) => {
+        e.prevetDefault();
+        console.log(username, newComment);
+
+    } 
+
+    render() {
+    
+        return (
+      
+            <div className='App'>
+                { this.state.show ? <p>{<PostContainer posts={this.state.dummyData} addLikes={this.addLikes} comment={this.comment}/> }</p> : 
+                <div className='loginPage'>
+                    <img src={instagram} />
+                    <Box>
+                        <h2>Username:</h2>
+                        <form onSubmit={this.handleLoginSubmit}>
+                            <input
+                                type='text'
+                                name='username'
+                                value={this.state.username}
+                                onChange={this.handleInputChange}
+                                placeholder='Username'
+                            />
+                        </form> 
+                    </Box>
+                    <Box2>
+                        <h2>Password:</h2>
+                        <form onSubmit={this.handleLoginSubmit}>
+                            <input
+                                type='text'
+                                name='password'
+                                value={this.state.password}
+                                onChange={this.handleInputChange}
+                                placeholder='Password'
+                            />
+                        </form>
+                    </Box2>
+                </div>}
+                <Button primary onClick={this.ToggleClick}>{ this.state.show ? 'Log Out' : 'Log In' }</Button> 
+                <div
+
+                    style={this.ToggleClick ? { textDecoration: 'line-through', marginLeft: '30px', backgroundColor: 'white', color: 'black', transition: '1s'} : { textDecoration: 'none', marginLeft: '0px', transition: '1s'} }
+                    
+                />
+            </div>
+        );
+    }
 }
 
-const Button = styled.button`
-
-  ${props => props.primary && css`
+const Button = styled.text`
+    display: flex;
+    justify-content: center;
     height: 30px;
-    border-radius: 10px;
-    font-size: 15px;
-    color: white;
+    width: 25%;
     background-color: black;
-  `}
+    color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+    :hover{
+        color: black;
+        background-color: white;
+        transition: .5s;
+        border: 3px solid black;
+    }
 `;
 
-const H2 = styled.text`
-  display: flex;
-  margin-bottom: 0;
-  justify-content: flex-start;
-  margin-left: 130px;
-  font-size: 20px;
-  
+const Box = styled.div`
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 5px;
+    color: white;
+    background-color: rgb(48, 48, 48);
+    :hover{
+        background-color: white;
+        color: black;
+        transition: .5s;
+        border: 3px solid black;
+    }
+`;
+
+const Box2 = styled.div`
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    color: white;
+    background-color: rgb(48, 48, 48);
+    :hover{
+        background-color: white;
+        color: black;
+        transition: .5s;
+        border: 3px solid black;
+    }
 `;
 
 export default Log;

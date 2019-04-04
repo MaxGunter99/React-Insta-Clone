@@ -1,0 +1,93 @@
+html{
+    background-color: rgb(226, 226, 226);
+    width: 70%;
+    margin: 0 auto;
+}
+
+.SearchBar{
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.SearchBar img{
+    height: 40px;
+    margin: 10px;
+}
+
+.post{
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.top img{
+    height: 40px;
+    border-radius: 100px;
+    margin: 10px;
+}
+
+.middle img{
+    width: 100%;
+}
+
+.bottom button img{
+    height: 30px;
+    width: auto;
+    align-items: center;
+}
+
+.bottom button{
+    border: 0px;
+    margin: 5px;
+}
+
+
+.bottom p strong{
+    margin-left: 5px;
+}
+
+.bottom div div div{
+    display: flex;
+    justify-content: flex-start;
+    margin: 15px 0;
+}
+
+.bottom div form input{
+    display: inline-flex;
+    width: 80%;
+    border: 1px solid grey;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    height: 40px;
+    justify-content: space-evenly;
+    font-size: 15px;
+}
+
+.bottom div form{
+    display: flex;
+    border-radius: 10px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+div div div form input{
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 100px;
+    padding-left: 20px;
+    background-color: rgb(238, 236, 236);
+}
