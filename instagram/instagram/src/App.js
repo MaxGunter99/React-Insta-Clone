@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import Info from './Components/dummy-data';
-
-import PostContainer from './Components/dataLayout';
-
-import dummyData from './Components/dummy-data';
+import dummyData from './dummy-data';
+import Log from './Login';
 
 class App extends Component {
 
-  constructor() {
+  constructor(){
     super();
     this.state = {
-      dummyData: Info
-    };
+      dummyData: [],
+    }
+    console.log("constructing data");
   }
+
+
 
   render() {
     return (
       <div className="App">
-        <PostContainer dummyData={this.state.dummyData} />
+        <Log/>
       </div>
     );
   }
-  
 }
 
 export default App;
