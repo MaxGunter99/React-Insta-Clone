@@ -3,13 +3,13 @@ import InstagramLogo from '../Images/InstagramLogo.png';
 import InstagramText from '../Images/InstagramText.png';
 import Compass from '../Images/compass.png';
 import Profile from '../Images/profile.png';
-import '/Users/voidchaser/Lambda/InstaCloneTwo/React-Insta-Clone/instagram/instagram/src/Components/SearchBar/SearchBar.css';
+import styled, { css } from 'styled-components'
 
 function SearchBar(props) {
     return (
         <>
 
-            <div className='SearchBar'>
+            <SearchBarNav>
 
                 <div className='left'>
 
@@ -38,10 +38,22 @@ function SearchBar(props) {
                     
                 </div>
 
-            </div>
+            </SearchBarNav>
 
         </>
     )
 }
+
+const SearchBarNav = styled.div`
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    align-items: center;
+    img{
+        height: 40px;
+        margin: 10px;
+    }
+`;
 
 export default SearchBar;

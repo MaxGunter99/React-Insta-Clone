@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import dummyData from './dummy-data';
 import Log from './Login';
+import styled, { css } from 'styled-components'
 
 class App extends Component {
 
@@ -18,10 +18,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Log/>
+        <Loging>
+          <Log/>
+        </Loging>
       </div>
     );
   }
 }
+
+const Loging = styled.div`
+  width: 100%;
+  background-color: lightgrey;
+  justify-contet: center;
+`;
 
 export default App;

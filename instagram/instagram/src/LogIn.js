@@ -68,11 +68,12 @@ class Log extends Component {
     render() {
     
         return (
-      
-            <div className='App'>
-                { this.state.show ? <p>{<PostContainer posts={this.state.dummyData} addLikes={this.addLikes} comment={this.comment}/> }</p> : 
-                <div className='loginPage'>
-                    <img src={instagram} />
+            <Bottom div className='App'>
+                { this.state.show ? <P>{<PostContainer posts={this.state.dummyData} addLikes={this.addLikes} comment={this.comment}/> }</P> : 
+                <Div className='loginPage'>
+                    <Insta>
+                        <img src={instagram} />
+                    </Insta>
                     <Box>
                         <h2>Username:</h2>
                         <form onSubmit={this.handleLoginSubmit}>
@@ -97,23 +98,34 @@ class Log extends Component {
                             />
                         </form>
                     </Box2>
-                </div>}
+                </Div>}
                 <Button primary onClick={this.ToggleClick}>{ this.state.show ? 'Log Out' : 'Log In' }</Button> 
-                <div
-
-                    style={this.ToggleClick ? { textDecoration: 'line-through', marginLeft: '30px', backgroundColor: 'white', color: 'black', transition: '1s'} : { textDecoration: 'none', marginLeft: '0px', transition: '1s'} }
-                    
-                />
-            </div>
+            </Bottom>
         );
     }
 }
+
+const P = styled.div`
+
+`;
+
+const Insta = styled.div`
+    margin-top: 50px;
+`;
+
+const Bottom = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+`;
 
 const Button = styled.text`
     display: flex;
     justify-content: center;
     height: 30px;
-    width: 25%;
+    width: 38%;
     background-color: black;
     color: white;
     border-radius: 10px;
@@ -127,6 +139,28 @@ const Button = styled.text`
         transition: .5s;
         border: 3px solid black;
     }
+    background: linear-gradient(270deg, #ff0000, #ff8900, #eaff43, #59d052, #0ee8e0, #7d0ee8);
+    background-size: 1200% 1200%;
+
+    -webkit-animation: AnimationName 25s ease infinite;
+    -moz-animation: AnimationName 25s ease infinite;
+    animation: AnimationName 25s ease infinite;
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+        @keyframes AnimationName { 
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
 `;
 
 const Box = styled.div`
@@ -135,8 +169,8 @@ const Box = styled.div`
     border-radius: 10px;
     display: inline-flex;
     align-items: center;
-    margin-right: 5px;
     color: white;
+    width: 96%;
     background-color: rgb(48, 48, 48);
     :hover{
         background-color: white;
@@ -152,8 +186,8 @@ const Box2 = styled.div`
     border-radius: 10px;
     display: inline-flex;
     align-items: center;
-    margin-left: 5px;
     color: white;
+    width: 96%;
     background-color: rgb(48, 48, 48);
     :hover{
         background-color: white;
@@ -161,6 +195,11 @@ const Box2 = styled.div`
         transition: .5s;
         border: 3px solid black;
     }
+`;
+
+const Div = styled.div`
+    margin: 0 auto;
+    justify-conetent: center;
 `;
 
 export default Log;

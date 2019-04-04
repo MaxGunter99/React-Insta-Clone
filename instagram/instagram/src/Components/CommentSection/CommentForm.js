@@ -11,7 +11,8 @@ const CommentForm = props => {
                 value={props.value}
                 placeholder='comment'
             />
-            <Input type='button' onClick={(e) => {console.log(props.username); props.comment(props.username, props.value, e)}}>Post</Input>
+            {/* <Input type='button' onClick={(e) => {console.log(props.username); props.comment(props.username, props.value, e)}}>Post</Input> */}
+            <Input type='button' onClick={props.handleAddComment}>Post</Input>
 
         </form>
     );
@@ -25,6 +26,11 @@ const Input = styled.text `
     background-color: black;
     padding: 5px;
     margin-left: 5px;
+    
+`;
+
+const input = styled.text`
+    height: 100px;
 `;
 
 export default CommentForm;
